@@ -39,8 +39,9 @@ const refresh = (done) => {
   done();
 };
 
-const build = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, optimizePng, optimizeJpg, optimizeSvg));
-const dev = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, optimizePng, optimizeJpg, optimizeSvg), syncServer);
+//deleted optimizeJpg optimizePng
+const build = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, optimizeSvg));
+const dev = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, optimizeSvg), syncServer);
 const start = gulp.series(clean, copy, sprite, gulp.parallel(styles, js), syncServer);
 
 export { createWebp as webp, build, start, dev};

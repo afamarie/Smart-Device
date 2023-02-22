@@ -10,6 +10,7 @@
 
 @import "variables";
 @import "mixins";
+@import "global/colors";
 @import "global/fonts";
 @import "global/reboot";
 @import "global/utils";
@@ -22,7 +23,16 @@
 @import "blocks/modal";
 @import "blocks/custom-input";
 @import "blocks/custom-toggle";
-@import "blocks/custom-select";
+@import "blocks/about.scss";
+@import "blocks/advantages.scss";
+@import "blocks/contact-us.scss";
+@import "blocks/footer-container.scss";
+@import "blocks/header.scss";
+@import "blocks/intro.scss";
+@import "blocks/logo.scss";
+@import "blocks/navigation.scss";
+@import "blocks/section.scss";
+@import "blocks/services-list.scss";
 
 // ---------------------------------
 
