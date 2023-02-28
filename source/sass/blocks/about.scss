@@ -1,6 +1,43 @@
 .about {
+  display: flex;
+  padding-bottom: 55px;
+  flex-direction: column;
+  color: $color-black-pearl;
+  gap: 15px;
+
+  @include vp-1023 {
+    gap: 0;
+    padding-bottom: 35px;
+
+    p + p {
+      margin-top: 20px;
+    }
+  }
+
+  @include vp-767 {
+    gap: 15px;
+    padding-bottom: 55px;
+
+    p + p {
+      margin-top: 0;
+    }
+  }
 }
 
 .about__btn {
+  margin-top: 30px;
+  min-width: 180px;
+  background-color: transparent;
+  color: $color-deep-sky-blue;
+  border: 1px solid $color-deep-sky-blue;
 
+  @include vp-1023 {
+    margin-top: 20px;
+  }
+
+  @include vp-767 {
+    min-width: 160px;
+    margin-top: 0;
+    padding: 8px 15px;
+  }
 }

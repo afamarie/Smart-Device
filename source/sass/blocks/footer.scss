@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  box-sizing: border-box;
+  flex-grow: 1;
+  background-color: $color-black-pearl;
+  width: 100%;
+
+  a {
+    @include hover-focus {
+      opacity: 0.8;
+      transition: opacity $trans-default;
+    }
+  }
+}

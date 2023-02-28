@@ -1,8 +1,142 @@
 .contact-us {
+  @include vp-1024 {
+    grid-column: 2/-1;
+    padding-bottom: 20px;
+  }
+
+  legend,
+  input::placeholder,
+  textarea::placeholder,
+  input,
+  textarea {
+    font-family: $basic-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-white;
+  }
+
+  legend {
+    padding-bottom: 25px;
+  }
+
+  label {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  textarea {
+    padding-top: 25px;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    opacity: 0.8;
+  }
+
+  legend::selection,
+  input::selection,
+  textarea::selection,
+  label::selection {
+    color: $color-black-pearl;
+    background-color: $color-white;
+  }
+
+  @include vp-1023 {
+    width: 100%;
+    padding-bottom: 10px;
+
+    legend {
+      padding-top: 5px;
+      padding-bottom: 20px;
+    }
+  }
+
+  @include vp-767 {
+    legend {
+      padding-top: 10px;
+    }
+  }
+
+  .modal & {
+    padding-bottom: 0;
+  }
+
+  .modal & .custom-toggle {
+    padding: 0;
+  }
+
+  .custom-input__label,
+  .custom-textarea__label {
+    @include visually-hidden;
+  }
 }
-.contact-us__wrapper {
+
+.contact-us__fieldset {
+  display: flex;
+  margin: 0;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  border: none;
+  gap: 20px 30px;
+
+  @include vp-1023 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.contact-us__fields-wrapper {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding: 0.35em 0.75em 0.6em;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px 30px;
+
+  .custom-toggle {
+    order: 2;
+  }
+
+  @include vp-1023 {
+    padding-left: 0;
+    padding-right: 0;
+
+    .custom-toggle {
+      margin-right: 60px;
+      padding: 15px 0;
+      flex: 0 1 265px;
+    }
+  }
+
+  @include vp-767 {
+    padding-top: 30px;
+    padding-bottom: 5px;
+    gap: 10px;
+
+    .custom-toggle {
+      margin-right: 0;
+      flex-grow: 1;
+    }
+  }
 }
 
 .contact-us__submit-btn {
-}
+  flex: 0 1 265px;
+  font-size: 16px;
+  line-height: 19px;
+  order: 1;
+  color: $color-white;
+  background-color: $color-black-pearl;
+  border: none;
 
+  .modal & {
+    margin-top: 10px;
+    flex-grow: 1;
+  }
+
+  @include vp-767 {
+    flex-grow: 1;
+  }
+}

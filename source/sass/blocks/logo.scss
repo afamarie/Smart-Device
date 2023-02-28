@@ -1,50 +1,37 @@
 .logo {
-  display: grid;
+  display: inline-flex;
   box-sizing: border-box;
   width: fit-content;
-  grid-template-columns: 1fr max-content;
-  grid-template-rows: 1fr min-content;
-  gap: 5px 15px;
 
-  &--footer {
+  span {
+    @include visually-hidden;
+  }
+
+  @include vp-767 {
+    &--header {
+      padding-top: 10px;
+      margin: 0 auto;
+    }
+
+    &--header svg {
+      width: 35px;
+      height: 35px;
+    }
   }
 }
 
 .logo__icon {
-  grid-column: 1/2;
-  grid-row: 1/-1;
-  fill: $highlight;
-}
+  &--mobile {
+    display: none;
+  }
 
-.logo__title {
-  grid-column: 2/-1;
-  grid-row: 1/2;
-  font-family: $additional-font;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 29px;
-  color: $general-light;
+  @include vp-767 {
+    .logo--header > &--mobile {
+      display: initial;
+    }
 
-  .logo--header & {
-    @include vp-767 {
-      @include visually-hidden;
+    .logo--header > &--desktop {
+      display: none;
     }
   }
 }
-
-.logo__caption {
-  grid-column: 2/-1;
-  grid-row: 2/-1;
-  font-family: $highlight-font;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  color: $lightest-transparent;
-
-  .logo--header & {
-    @include vp-767 {
-      @include visually-hidden;
-    }
-  }
-}
-

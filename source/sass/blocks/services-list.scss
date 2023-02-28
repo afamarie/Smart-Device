@@ -1,7 +1,122 @@
 .services-list {
+  padding: 60px 0 80px;
+  margin: 0;
+  flex-wrap: wrap;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 85px;
+
+  @include vp-1023 {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
 }
+
 .services-list__list-item {
+  display: flex;
+  box-sizing: border-box;
+  background-color: $color-white-transparent;
+
+  h3 {
+    margin: 0;
+    width: 80%;
+    font-family: $additional-font;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    color: inherit;
+  }
+
+  a {
+    display: inline-flex;
+    padding: 50px 80px 100px 40px;
+    flex-grow: 1;
+    flex-direction: column;
+    min-height: 650px;
+    color: inherit;
+  }
+
+  @include vp-1023 {
+    a {
+      padding: 40px 80px 90px 45px;
+      min-height: 250px;
+    }
+
+    h3 {
+      width: 30%;
+    }
+  }
+
+  @include vp-767 {
+    h3 {
+      font-size: 18px;
+      width: 70%;
+    }
+
+    a {
+      padding: 25px 60px 60px 30px;
+    }
+  }
 }
+
 .services-list__btn {
+  position: relative;
+  margin-top: auto;
+  margin-left: auto;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: $color-deep-sky-blue;
+  border-radius: 3px 0 0 0;
+  bottom: -100px;
+  right: -80px;
+
+  &::after,
+  &::before {
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 6px;
+    box-sizing: border-box;
+    left: 50%;
+    top: 50%;
+    background-color: $color-white;
+    border-radius: 0 1px 1px 0;
+    content: "";
+  }
+
+  &::after {
+    transform-origin: top right;
+    transform: rotate(-45deg);
+  }
+
+  &::before {
+    transform-origin: bottom right;
+    transform: rotate(45deg);
+  }
+
+  @include vp-1023 {
+    bottom: -90px;
+    right: -80px;
+  }
+
+  @include vp-767 {
+    padding: 20px;
+    bottom: -60px;
+    right: -60px;
+
+    &::after,
+    &::before {
+      width: 5px;
+    }
+  }
 }
 

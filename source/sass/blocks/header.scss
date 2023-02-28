@@ -1,5 +1,18 @@
 .header {
   position: fixed;
-  width: 100%;
-  background: linear-gradient(180deg, $general-dark 84.9%, transparent 100%);
+  width: 100vw;
+  background: $top-to-bottom;
+  z-index: 1;
+
+  a {
+    @include hover-focus {
+      opacity: 0.8;
+      transition: opacity $trans-default;
+    }
+  }
+
+  @include vp-1023 {
+    width: 100%;
+    position: absolute;
+  }
 }
