@@ -3,6 +3,7 @@ import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import {initAutoResizeTextarea} from './utils/auto-resize-textarea';
 import {initPhoneMask} from './utils/phone-mask';
+import {initAccordions} from './modules/accordion/init-accordion';
 
 // ---------------------------------
 
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
     initAutoResizeTextarea();
     initPhoneMask();
+    initAccordions();
   });
 });
 

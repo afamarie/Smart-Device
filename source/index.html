@@ -103,24 +103,20 @@
             <p>
               2022
             </p>
-            <div class="about" data-tabs="parent">
+            <div class="about" data-accordion="parent">
               <h2>О компании</h2>
-              <span class="about__content">
                 <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
                 <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.</p>
-              </span>
-              <span class="about__content about__content--shown">
                 <p>Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</p>
-              </span>
-              <span class="about__content about__content--shown">
-                <p>Smart Device&nbsp;&mdash; это команда профессионалов. Через нас прошло более 1&nbsp;000&nbsp;000&nbsp;клиентов, 70% из&nbsp;которых продолжают сотрудничество по&nbsp;сей день. На&nbsp;данный момент насчитывается более 14&nbsp;офисов по&nbsp;всей стране и&nbsp;20&nbsp;городов присутствия.</p>
-              </span>
-              <span class="about__content about__content--shown">
-                <p>Мы&nbsp;стремимся к&nbsp;постоянному развитию и&nbsp;повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и&nbsp;время наших клиентов.</p>
-              </span>
-              <button class="about__btn btn" type="button">
-                <span>Подробнее</span>
-              </button>
+                <div class="about__accordion" data-accordion="element">
+                  <div class="about__accordion-content" data-accordion="content">
+                    <p>Smart Device&nbsp;&mdash; это команда профессионалов. Через нас прошло более 1&nbsp;000&nbsp;000&nbsp;клиентов, 70% из&nbsp;которых продолжают сотрудничество по&nbsp;сей день. На&nbsp;данный момент насчитывается более 14&nbsp;офисов по&nbsp;всей стране и&nbsp;20&nbsp;городов присутствия.</p>
+                    <p>Мы&nbsp;стремимся к&nbsp;постоянному развитию и&nbsp;повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и&nbsp;время наших клиентов.</p>
+                  </div>
+                  <button class="about__btn btn" type="button" data-accordion="button" data-has-button-name>
+                    <span data-accordion="button-name">Подробнее</span>
+                  </button>
+              </div>
             </div>
           </div>
         </section>
@@ -131,19 +127,19 @@
               <span class="section__header-content section__header-content--mobile">Товары и&nbsp;услуги Smart&nbsp;Device</span>
             </h2>
             <ul class="services-list">
-              <li class="services-list__list-item">
+              <li class="services-list__list-item services-list__list-item--board">
                 <a href="#">
                   <h3>Производство печатных плат</h3>
                   <span class="services-list__btn btn"></span>
                 </a>
               </li>
-              <li class="services-list__list-item">
+              <li class="services-list__list-item services-list__list-item--installation">
                 <a href="#">
                   <h3>Монтаж печатных плат</h3>
                   <span class="services-list__btn btn"></span>
                 </a>
               </li>
-              <li class="services-list__list-item">
+              <li class="services-list__list-item services-list__list-item--light">
                 <a href="#">
                   <h3>Комплектующие для&nbsp;светотехники</h3>
                   <span class="services-list__btn btn"></span>
@@ -194,7 +190,7 @@
         </section>
       </main>
       <footer class="footer">
-        <div class="footer-container">
+        <div class="footer-container" data-accordion="parent" data-single data-destroy="(max-width: 767px)">
           <div class="footer-container__wrapper footer-container__wrapper--logo-social">
             <a class="logo logo--footer" href="#">
               <svg class="logo__icon logo__icon--desktop" width="215" height="55">
@@ -232,11 +228,11 @@
               </li>
             </ul>
           </div>
-          <div class="footer-container__wrapper footer-container__wrapper--site-menu">
-            <button class="footer-container__accordion-btn" type="button">
+          <div class="footer-container__wrapper footer-container__wrapper--site-menu" data-accordion="element">
+            <button class="footer-container__accordion-btn" type="button" data-accordion="button">
               <b>Разделы сайта</b>
             </button>
-            <ul class="footer-container__list footer-container__list">
+            <ul class="footer-container__list footer-container__list" data-accordion="content">
               <li class="footer-container__list-item">
                 <a href="#">
                   <span>О Компании</span>
@@ -274,11 +270,11 @@
               </li>
             </ul>
           </div>
-          <div class="footer-container__wrapper footer-container__wrapper--contacts">
-            <button class="footer-container__accordion-btn" type="button">
+          <div class="footer-container__wrapper footer-container__wrapper--contacts" data-accordion="element">
+            <button class="footer-container__accordion-btn" type="button" data-accordion="button">
               <b>Наш офис</b>
             </button>
-            <ul class="footer-container__list footer-container__list">
+            <ul class="footer-container__list footer-container__list" data-accordion="content">
               <li class="footer-container__list-item">
                 <p>г. Мытищи, Олимпийский проспект, д.10</p>
               </li>

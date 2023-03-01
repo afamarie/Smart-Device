@@ -62,10 +62,6 @@
     padding-bottom: 0;
   }
 
-  .modal & .custom-toggle {
-    padding: 0;
-  }
-
   .custom-input__label,
   .custom-textarea__label {
     @include visually-hidden;

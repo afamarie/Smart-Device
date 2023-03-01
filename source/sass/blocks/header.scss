@@ -4,11 +4,10 @@
   background: $top-to-bottom;
   z-index: 1;
 
-  a {
-    @include hover-focus {
-      opacity: 0.8;
-      transition: opacity $trans-default;
-    }
+  a:hover,
+  a:focus {
+    opacity: 0.5;
+    transition: opacity $trans-default;
   }
 
   @include vp-1023 {

@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex: 1 1 260px;
-  padding: 20px 0;
+  padding: 10px 5px;
   align-items: center;
   border-radius: 3px;
 
@@ -42,7 +42,6 @@
   &__label {
     margin-bottom: 0;
     margin-left: 0;
-    padding: 0 2px;
   }
 
   &--checkbox {

@@ -141,6 +141,11 @@
 
     &::after {
       transform: rotate(90deg);
+      transition: transform $trans-default;
+    }
+
+    .footer-container__wrapper.is-active &::after {
+      transform: none;
     }
   }
 }
@@ -165,6 +170,16 @@
     .footer-container__wrapper--site-menu & {
       display: flex;
       flex-direction: column;
+    }
+  }
+
+  @include vp-767 {
+    max-height: 0;
+    transition: max-height 0.3s;
+    overflow: hidden;
+
+    .footer-container__wrapper.is-active > & {
+      max-height: 100%;
     }
   }
 }
