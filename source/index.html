@@ -22,14 +22,14 @@
                 <svg class="logo__icon logo__icon--desktop" width="215" height="55">
                   <use xlink:href="img/sprite.svg#smart-device-logo"></use>
                 </svg>
-                <svg svg class="logo__icon logo__icon--mobile" width="35" height="35">
+                <svg class="logo__icon logo__icon--mobile" width="35" height="35">
                   <use xlink:href="img/sprite.svg#smart-device-logo__mobile"></use>
                 </svg>
                 <span>Smart&nbsp;Device. Умные технологии</span>
               </a>
             </li>
             <li class="navigation__item navigation__item--email">
-              <a class="navigation__link" href="mailto:info@sd.ru">
+              <a class="navigation__link" href="mailto:info@sd.ru" aria-label="E-mail Smart Device info@sd.ru">
                 <svg class="navigation__icon" width="20" height="20">
                   <use xlink:href="img/sprite.svg#email"></use>
                 </svg>
@@ -37,7 +37,7 @@
               </a>
             </li>
             <li class="navigation__item navigation__item--phone">
-              <a class="navigation__link" href="tel:74950005252">
+              <a class="navigation__link" href="tel:74950005252" aria-label="Телефон Smart Device +74950005252">
                 <svg class="navigation__icon" width="20" height="20">
                   <use xlink:href="img/sprite.svg#phone"></use>
                 </svg>
@@ -157,7 +157,7 @@
                 <div class="custom-input" data-validate-type="text" data-on-input-validate data-message-base="укажите имя" data-required>
                   <label>
                     <span class="custom-input__label">Имя</span>
-                    <input type="text" placeholder="Имя" name="name" required>
+                    <input type="text" placeholder="Имя" name="name" required data-required-d>
                   </label>
                 </div>
                 <div class="custom-input" data-validate-type="phone" data-on-input-validate data-message-base="укажите телефон" data-message-extra="только цифры" data-required>
@@ -176,9 +176,9 @@
                 </div>
               </fieldset>
               <div class="contact-us__fields-wrapper">
-                <div class="custom-toggle custom-toggle--checkbox" tabindex="0" data-validate-type="checkbox" data-message-base="обязательное поле" data-required>
+                <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox" data-message-base="обязательное поле" data-required>
                   <label>
-                    <input type="checkbox" name="agreement" value="yes" required>
+                    <input type="checkbox" name="agreement" value="yes">
                     <span class="custom-toggle__icon"></span>
                     <span class="custom-toggle__label">Я согласен на обработку  персональных данных</span>
                   </label>
@@ -196,7 +196,7 @@
               <svg class="logo__icon logo__icon--desktop" width="215" height="55">
                 <use xlink:href="img/sprite.svg#smart-device-logo"></use>
               </svg>
-              <svg svg class="logo__icon logo__icon--mobile" width="35" height="35">
+              <svg class="logo__icon logo__icon--mobile" width="35" height="35">
                 <use xlink:href="img/sprite.svg#smart-device-logo__mobile"></use>
               </svg>
               <span>Smart&nbsp;Device. Умные технологии</span>
@@ -300,18 +300,18 @@
     </div>
 
     <!-- Модалки -->
-    <div class="modal modal--call" data-modal="call">
+    <div class="modal modal--call" data-modal="call" >
       <div class="modal__wrapper">
         <div class="modal__overlay" data-close-modal></div>
         <div class="modal__content" data-form-validate>
           <p class="modal__description">Закажите звонок</p>
-          <form class="contact-us" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off">
+          <form class="contact-us" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off" data-form-modal>
             <fieldset class="contact-us__fieldset contact-us__fieldset--name-phone">
               <legend>Оставьте контакты, мы&nbsp;проконсультируем вас бесплатно в&nbsp;удобное время</legend>
               <div class="custom-input" data-validate-type="text" data-on-input-validate data-message-base="укажите имя" data-required>
                 <label>
                   <span class="custom-input__label">Имя</span>
-                  <input type="text" placeholder="Имя" name="name" required>
+                  <input type="text" placeholder="Имя" name="name" required data-focus>
                 </label>
               </div>
               <div class="custom-input" data-validate-type="phone" data-on-input-validate data-message-base="укажите телефон" data-message-extra="только цифры" data-required>
@@ -330,7 +330,7 @@
               </div>
             </fieldset>
             <div class="contact-us__fields-wrapper">
-              <div class="custom-toggle custom-toggle--checkbox" tabindex="0" data-validate-type="checkbox" data-message-base="обязательное поле" data-required>
+              <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox" data-message-base="обязательное поле" data-required>
                 <label>
                   <input type="checkbox" name="agreement" value="yes" required>
                   <span class="custom-toggle__icon"></span>
@@ -340,7 +340,7 @@
               <button class="contact-us__submit-btn btn" type="submit">Отправить</button>
             </div>
           </form>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal data-focus>
+          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
             <svg width="15" height="15">
               <use xlink:href="img/sprite.svg#icon-close"></use>
             </svg>

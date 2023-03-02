@@ -129,6 +129,21 @@
   }
 }
 
+// Picture gradients
+
+@mixin basic-gragient {
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, $color-black-pearl-transparent 71.72%, transparent 100%);
+    z-index: -1;
+  }
+}
+
 // ---------------------------------
 
 // не нужно добавлять свои миксины для ресета списков, обнуления кнопок и прочие

@@ -44,11 +44,11 @@
     color: $color-black-pearl;
   }
 
-  &:hover {
+  @include hover {
     background-color: $color-deep-sky-blue;
     box-shadow: none;
 
-    svg {
+    .advantages__icon {
       fill: $color-alice-blue;
     }
 
@@ -56,12 +56,12 @@
     p {
       color: $color-alice-blue;
     }
-  }
 
-  &:hover h3::selection,
-  &:hover p::selection {
-    color: $color-black-pearl;
-    background-color: $color-white;
+    h3::selection,
+    p::selection {
+      color: $color-black-pearl;
+      background-color: $color-white;
+    }
   }
 
   @include vp-1023 {
@@ -86,10 +86,6 @@
 
 .advantages__icon {
   fill: $color-deep-sky-blue;
-
-  .advantages__list-item:hover & {
-    fill: $color-alice-blue;
-  }
 
   @include vp-767 {
     width: 30px;

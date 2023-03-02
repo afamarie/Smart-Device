@@ -1,4 +1,5 @@
 .section {
+  position: relative;
   display: flex;
   flex-grow: 1;
   padding: 60px 0;
@@ -53,6 +54,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    isolation: isolate;
+
+    @include basic-gragient;
   }
 
   @include vp-1023 {
@@ -164,7 +168,12 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 15px;
-      background-image: url("../img/backgrounds/paper_plane.png");
+      background-image: image-set(
+        url("../img/backgrounds/paper-plane.webp") 1x,
+        url("../img/backgrounds/paper-plane@2x.webp") 2x,
+        url("../img/backgrounds/paper-plane.png") 1x,
+        url("../img/backgrounds/paper-plane@2x.png") 2x
+      );
       background-repeat: no-repeat;
       background-position: 7% 43%;
       background-size: 38%;

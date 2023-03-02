@@ -125,8 +125,12 @@
     }
   }
 
-  &:focus-visible {
-    box-shadow: 0 0 0 1px $color-black-pearl;
+  input:focus-visible {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    left: 10px;
+    clip: auto;
   }
 
   &:hover {

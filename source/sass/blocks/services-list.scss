@@ -21,6 +21,7 @@
 }
 
 .services-list__list-item {
+  position: relative;
   display: flex;
   box-sizing: border-box;
   background-color: $color-white-transparent;
@@ -28,11 +29,12 @@
   background-position: center;
   background-size: cover;
   transition: opacity $trans-default;
+  isolation: isolate;
 
   h3 {
     margin: 0;
     margin-right: auto;
-    flex: 0 1 230px;
+    flex: 1 1 230px;
     font-family: $additional-font;
     font-size: 20px;
     line-height: 30px;
@@ -47,6 +49,11 @@
     flex-direction: row;
     min-height: 650px;
     color: inherit;
+    transition: opacity $trans-default;
+
+    @include hover-focus {
+      opacity: 0.5;
+    }
   }
 
   &--board {
@@ -76,19 +83,10 @@
     );
   }
 
-  &:hover,
-  &:active {
-    opacity: 0.8;
-  }
-
   @include vp-1023 {
     a {
       padding: 40px 80px 90px 45px;
       min-height: 250px;
-    }
-
-    h3 {
-      width: 30%;
     }
 
     &--board {
@@ -122,25 +120,25 @@
   @include vp-767 {
     h3 {
       font-size: 18px;
-      width: 70%;
+      flex-basis: 150px;
     }
 
     a {
       padding: 25px 60px 60px 30px;
     }
   }
+
+  @include basic-gragient;
 }
 
 .services-list__btn {
-  position: relative;
-  margin-top: auto;
-  margin-left: auto;
+  position: absolute;
   padding: 30px;
   box-sizing: border-box;
   background-color: $color-deep-sky-blue;
   border-radius: 3px 0 0 0;
-  bottom: -100px;
-  right: -40px;
+  bottom: 0;
+  right: 0;
 
   &::after,
   &::before {
@@ -166,16 +164,7 @@
     transform: rotate(45deg);
   }
 
-  @include vp-1023 {
-    bottom: -90px;
-    right: -80px;
-  }
-
   @include vp-767 {
-    padding: 20px;
-    bottom: -60px;
-    right: -60px;
-
     &::after,
     &::before {
       width: 5px;

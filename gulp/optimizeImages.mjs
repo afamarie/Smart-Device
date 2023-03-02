@@ -44,7 +44,7 @@ const optimizeJpg = () =>
 
 const optimizePng = () =>
   gulp
-      .src('source/img/**/*.{png}')
+      .src('source/img/**/*.png')
       .pipe(squoosh())
       .pipe(gulp.dest('build/img'));
 

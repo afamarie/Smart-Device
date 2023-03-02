@@ -678,11 +678,10 @@ button,
 
 .btn:disabled {
   opacity: 0.5;
-  pointer-events: none;
+  cursor: not-allowed;
 }
 
-.btn:hover,
-.btn:focus {
+.btn.focus-visible:focus {
   opacity: 0.8;
 }
 
@@ -1048,9 +1047,12 @@ button,
   color: #15ab07;
 }
 
-.custom-toggle:focus-visible {
-  -webkit-box-shadow: 0 0 0 1px #041827;
-  box-shadow: 0 0 0 1px #041827;
+.custom-toggle input:focus-visible {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  left: 10px;
+  clip: auto;
 }
 
 .custom-toggle:hover {
@@ -1183,39 +1185,8 @@ button,
   color: #041827;
 }
 
-.advantages__list-item:hover {
-  background-color: #00b2ff;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.advantages__list-item:hover svg {
-  fill: #f3f6f7;
-}
-
-.advantages__list-item:hover h3,
-.advantages__list-item:hover p {
-  color: #f3f6f7;
-}
-
-.advantages__list-item:hover h3::-moz-selection,
-.advantages__list-item:hover p::-moz-selection {
-  color: #041827;
-  background-color: #ffffff;
-}
-
-.advantages__list-item:hover h3::selection,
-.advantages__list-item:hover p::selection {
-  color: #041827;
-  background-color: #ffffff;
-}
-
 .advantages__icon {
   fill: #00b2ff;
-}
-
-.advantages__list-item:hover .advantages__icon {
-  fill: #f3f6f7;
 }
 
 .contact-us input::-webkit-input-placeholder,
@@ -1566,12 +1537,14 @@ button,
   z-index: 1;
 }
 
-.header a:hover,
-.header a:focus {
-  opacity: 0.5;
+.header a {
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
+}
+
+.header a.focus-visible:focus {
+  opacity: 0.5;
 }
 
 .footer {
@@ -1587,12 +1560,14 @@ button,
   width: 100%;
 }
 
-.footer a:hover,
-.footer a:active {
-  opacity: 0.5;
+.footer a {
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
+}
+
+.footer a.focus-visible:focus {
+  opacity: 0.5;
 }
 
 .intro {
@@ -1733,6 +1708,7 @@ button,
 }
 
 .section {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1788,6 +1764,20 @@ button,
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  isolation: isolate;
+}
+
+.section--intro::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(4, 24, 39, 0.5)), to(transparent));
+  background: -o-linear-gradient(top, rgba(4, 24, 39, 0.5) 71.72%, transparent 100%);
+  background: linear-gradient(180deg, rgba(4, 24, 39, 0.5) 71.72%, transparent 100%);
+  z-index: -1;
 }
 
 .section__wrapper {
@@ -1867,6 +1857,7 @@ button,
 }
 
 .services-list__list-item {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1879,14 +1870,15 @@ button,
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
+  isolation: isolate;
 }
 
 .services-list__list-item h3 {
   margin: 0;
   margin-right: auto;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 230px;
-  flex: 0 1 230px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 230px;
+  flex: 1 1 230px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-size: 20px;
   line-height: 30px;
@@ -1908,6 +1900,13 @@ button,
   flex-direction: row;
   min-height: 650px;
   color: inherit;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.services-list__list-item a.focus-visible:focus {
+  opacity: 0.5;
 }
 
 .services-list__list-item--board {
@@ -1925,22 +1924,28 @@ button,
   background-image: image-set(url("../img/backgrounds/light_desktop.webp") 1x, url("../img/backgrounds/light_desktop@2x.webp") 2x, url("../img/backgrounds/light_desktop.jpg") 1x, url("../img/backgrounds/light_desktop@2x.jpg") 2x);
 }
 
-.services-list__list-item:hover,
-.services-list__list-item:active {
-  opacity: 0.8;
+.services-list__list-item::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(4, 24, 39, 0.5)), to(transparent));
+  background: -o-linear-gradient(top, rgba(4, 24, 39, 0.5) 71.72%, transparent 100%);
+  background: linear-gradient(180deg, rgba(4, 24, 39, 0.5) 71.72%, transparent 100%);
+  z-index: -1;
 }
 
 .services-list__btn {
-  position: relative;
-  margin-top: auto;
-  margin-left: auto;
+  position: absolute;
   padding: 30px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #00b2ff;
   border-radius: 3px 0 0 0;
-  bottom: -100px;
-  right: -40px;
+  bottom: 0;
+  right: 0;
 }
 
 .services-list__btn::after,
@@ -2046,7 +2051,8 @@ button,
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    background-image: url("../img/backgrounds/paper_plane.png");
+    background-image: -webkit-image-set(url("../img/backgrounds/paper-plane.webp") 1x, url("../img/backgrounds/paper-plane@2x.webp") 2x, url("../img/backgrounds/paper-plane.png") 1x, url("../img/backgrounds/paper-plane@2x.png") 2x);
+    background-image: image-set(url("../img/backgrounds/paper-plane.webp") 1x, url("../img/backgrounds/paper-plane@2x.webp") 2x, url("../img/backgrounds/paper-plane.png") 1x, url("../img/backgrounds/paper-plane@2x.png") 2x);
     background-repeat: no-repeat;
     background-position: 7% 43%;
     background-size: 38%;
@@ -2253,10 +2259,6 @@ button,
     min-height: 250px;
   }
 
-  .services-list__list-item h3 {
-    width: 30%;
-  }
-
   .services-list__list-item--board {
     background-image: -webkit-image-set(url("../img/backgrounds/board_tablet.webp") 1x, url("../img/backgrounds/board_tablet@2x.webp") 2x, url("../img/backgrounds/board_tablet.jpg") 1x, url("../img/backgrounds/board_tablet@2x.jpg") 2x);
     background-image: image-set(url("../img/backgrounds/board_tablet.webp") 1x, url("../img/backgrounds/board_tablet@2x.webp") 2x, url("../img/backgrounds/board_tablet.jpg") 1x, url("../img/backgrounds/board_tablet@2x.jpg") 2x);
@@ -2270,11 +2272,6 @@ button,
   .services-list__list-item--light {
     background-image: -webkit-image-set(url("../img/backgrounds/light_tablet.webp") 1x, url("../img/backgrounds/light_tablet@2x.webp") 2x, url("../img/backgrounds/light_tablet.jpg") 1x, url("../img/backgrounds/light_tablet@2x.jpg") 2x);
     background-image: image-set(url("../img/backgrounds/light_tablet.webp") 1x, url("../img/backgrounds/light_tablet@2x.webp") 2x, url("../img/backgrounds/light_tablet.jpg") 1x, url("../img/backgrounds/light_tablet@2x.jpg") 2x);
-  }
-
-  .services-list__btn {
-    bottom: -90px;
-    right: -80px;
   }
 }
 
@@ -2568,17 +2565,12 @@ button,
 
   .services-list__list-item h3 {
     font-size: 18px;
-    width: 70%;
+    -ms-flex-preferred-size: 150px;
+    flex-basis: 150px;
   }
 
   .services-list__list-item a {
     padding: 25px 60px 60px 30px;
-  }
-
-  .services-list__btn {
-    padding: 20px;
-    bottom: -60px;
-    right: -60px;
   }
 
   .services-list__btn::after,
@@ -2591,5 +2583,50 @@ button,
   .custom-toggle {
     padding: 14px 0 10px 0;
     width: 100%;
+  }
+}
+
+@media (hover: hover) {
+  .btn:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .advantages__list-item:hover:not(.focus-visible) {
+    background-color: #00b2ff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .advantages__list-item:hover:not(.focus-visible) .advantages__icon {
+    fill: #f3f6f7;
+  }
+
+  .advantages__list-item:hover:not(.focus-visible) h3,
+  .advantages__list-item:hover:not(.focus-visible) p {
+    color: #f3f6f7;
+  }
+
+  .advantages__list-item:hover:not(.focus-visible) h3::-moz-selection,
+  .advantages__list-item:hover:not(.focus-visible) p::-moz-selection {
+    color: #041827;
+    background-color: #ffffff;
+  }
+
+  .advantages__list-item:hover:not(.focus-visible) h3::selection,
+  .advantages__list-item:hover:not(.focus-visible) p::selection {
+    color: #041827;
+    background-color: #ffffff;
+  }
+
+  .header a:hover:not(.focus-visible) {
+    opacity: 0.5;
+  }
+
+  .footer a:hover:not(.focus-visible) {
+    opacity: 0.5;
+  }
+
+  .services-list__list-item a:hover:not(.focus-visible) {
+    opacity: 0.5;
   }
 }
