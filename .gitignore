@@ -7,6 +7,4 @@ package-lock.json
 *.psd
 *.sublime*
 npm-debug.*
-source/css/*.css
-source/css/*.map
 Thumbs.db

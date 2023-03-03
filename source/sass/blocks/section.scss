@@ -1,8 +1,10 @@
 .section {
   position: relative;
   display: flex;
-  flex-grow: 1;
   padding: 60px 0;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
   isolation: isolate;
 
   h2,
@@ -118,7 +120,7 @@
   margin: 0 auto;
   flex-grow: 1;
   flex-wrap: wrap;
-  max-width: 1342px;
+  width: clamp(270px, 100%, 1342px);
   padding-left: 60px;
   padding-right: 60px;
   background-position: left center;
@@ -137,7 +139,7 @@
 
   .section--contacts & {
     padding-top: 105px;
-    padding-bottom: 140px;
+    padding-bottom: 160px;
   }
 
   .section--about & > p {
@@ -198,6 +200,10 @@
       gap: 0;
     }
 
+    .section--about & > h2 {
+      line-height: 1;
+    }
+
     .section--about & > p {
       line-height: 175px;
     }
@@ -222,12 +228,20 @@
       box-sizing: border-box;
     }
 
+    .section--intro & > p {
+      padding-top: 10px;
+    }
+
     .section--about & {
       grid-template-columns: 1fr;
     }
 
     .section--about & > p {
       display: none;
+    }
+
+    .section--services & {
+      padding-top: 25px;
     }
 
     .section--contacts & {

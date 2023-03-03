@@ -25,10 +25,6 @@
     flex-grow: 1;
   }
 
-  textarea {
-    padding-top: 25px;
-  }
-
   input::placeholder,
   textarea::placeholder {
     opacity: 0.8;
@@ -55,6 +51,14 @@
   @include vp-767 {
     legend {
       padding-top: 10px;
+      padding-bottom: 25px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    .custom-input,
+    .custom-textarea {
+      padding-bottom: 0;
     }
   }
 
@@ -107,7 +111,7 @@
   }
 
   @include vp-767 {
-    padding-top: 30px;
+    padding-top: 40px;
     padding-bottom: 5px;
     gap: 10px;
 
