@@ -32,7 +32,7 @@ export class Accordions {
     if (element.classList.contains('is-active')) {
       this.closeAccordion(element);
       if (element.contains(button)) {
-        button.querySelector('[data-accordion="button-name"]').textContent = 'Подробнее';
+        button.textContent = 'Подробнее';
       }
 
       return;
@@ -41,7 +41,7 @@ export class Accordions {
     this.openAccordion(element);
 
     if (element.contains(button)) {
-      button.querySelector('[data-accordion="button-name"]').textContent = 'Свернуть';
+      button.textContent = 'Свернуть';
     }
   }
 

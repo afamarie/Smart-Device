@@ -1,127 +1,72 @@
 .custom-toggle {
   position: relative;
-  display: flex;
-  flex: 1 1 260px;
+  display: grid;
   padding: 10px 5px;
+  flex: 1 1 auto;
+  grid-template-columns: 15px 1fr;
   align-items: center;
+  gap: 11px;
   border-radius: 3px;
-
-  font-size: 18px;
-  line-height: 27px;
-  font-weight: 300;
   color: $color-white-transparent;
 
-  @media screen and (max-width: 767px) {
-    padding: 14px 0 10px 0;
-    width: 100%;
-  }
+  font-family: $basic-font;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
 
   input {
-    position: absolute;
-
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-
-    clip: rect(0 0 0 0);
+    position: relative;
+    appearance: none;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    cursor: pointer;
+    border: 1px solid $color-white-transparent;
+    transition: border 0.3s ease;
   }
 
   label {
-    position: relative;
-
-    font-family: $basic-font;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-
-    padding-left: 35px;
-
-    cursor: pointer;
-  }
-
-  &__label {
-    margin-bottom: 0;
-    margin-left: 0;
+    grid-column: 2/-1;
   }
 
   &--checkbox {
-    .custom-toggle__icon {
-      position: absolute;
-      display: inline-block;
-      width: 15px;
-      height: 15px;
-      box-sizing: border-box;
-      left: 10px;
-      top: 2px;
-
-      padding: 5px;
-
-      border: 1px solid $color-white-transparent;
+    input {
       border-radius: 3px;
-
-      transition: border 0.3s ease;
-
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-
-        height: 1px;
-
-        transition: background-color 0.3s ease;
-      }
-
-      &::before {
-        top: 50%;
-        left: 15%;
-        width: 5px;
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        top: 45%;
-        left: 35%;
-        width: 7px;
-        transform: rotate(-45deg);
-      }
     }
-  }
 
-  input[type="checkbox"]:checked + .custom-toggle__icon {
-    &::before,
-    &::after {
+    input::before,
+    input::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+    }
+
+    input::before {
+      top: 50%;
+      left: 15%;
+      width: 5px;
+      transform: rotate(45deg);
+    }
+
+    input::after {
+      top: 45%;
+      left: 35%;
+      width: 7px;
+      transform: rotate(-45deg);
+    }
+
+    input[type="checkbox"]:checked::after,
+    input[type="checkbox"]:checked::before {
       background-color: $color-white-transparent;
     }
 
-    input:checked + .custom-toggle__icon {
-      border: 1px solid $color-white-transparent;
-    }
-
-    input:checked:hover + .custom-toggle__icon {
-      &::before,
-      &::after {
-        background-color: $color-white;
-      }
-    }
-
-    &.is-invalid {
-      label span {
-        color: #ff1553;
-      }
-    }
-
-    .input-message {
-      position: absolute;
-      right: 0;
-      bottom: -5px;
-
-      &.is-invalid {
-        color: #ff0000;
-      }
-
-      &.is-valid {
-        color: #15ab07;
-      }
+    input[type="checkbox"]:checked:hover::after,
+    input[type="checkbox"]:checked:hover::before {
+      background-color: $color-white;
     }
   }
 
@@ -135,16 +80,9 @@
 
   &:hover {
     color: $color-white;
-  }
 
-  &:hover .custom-toggle__icon {
-    border-color: $color-white;
-  }
-
-  &:hover input:checked + .custom-toggle__icon {
-    &::before,
-    &::after {
-      background-color: $color-white;
+    input {
+      border-color: $color-white;
     }
   }
 
@@ -155,9 +93,7 @@
   .input-message {
     position: absolute;
     right: 0;
-    font-family: $basic-font;
-    bottom: -25px;
-    font-size: 14px;
+    bottom: -15px;
 
     &.is-invalid {
       color: #ff00007d;

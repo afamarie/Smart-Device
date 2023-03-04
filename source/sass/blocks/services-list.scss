@@ -43,6 +43,7 @@
   }
 
   a {
+    position: relative;
     display: inline-flex;
     padding: 50px 40px 100px 40px;
     flex-grow: 1;
@@ -54,6 +55,28 @@
     @include hover-focus {
       opacity: 0.5;
     }
+  }
+
+  a::after,
+  a::before {
+    position: absolute;
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    bottom: 0;
+    right: 0;
+    content: "";
+  }
+
+  a::before {
+    background-color: $color-deep-sky-blue;
+    border-radius: 3px 0 0 0;
+  }
+
+  a::after {
+    background-image: url("../img/svg/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 55% center;
   }
 
   &--board {
@@ -126,50 +149,13 @@
     a {
       padding: 25px 60px 60px 30px;
     }
+
+    a::after,
+    a::before {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   @include basic-gragient;
-}
-
-.services-list__btn {
-  position: absolute;
-  padding: 30px;
-  box-sizing: border-box;
-  background-color: $color-deep-sky-blue;
-  border-radius: 3px 0 0 0;
-  bottom: 0;
-  right: 0;
-
-  &::after,
-  &::before {
-    position: absolute;
-    display: block;
-    height: 1px;
-    width: 6px;
-    box-sizing: border-box;
-    left: 50%;
-    top: 50%;
-    background-color: $color-white;
-    border-radius: 0 1px 1px 0;
-    content: "";
-  }
-
-  &::after {
-    transform-origin: top right;
-    transform: rotate(-45deg);
-  }
-
-  &::before {
-    transform-origin: bottom right;
-    transform: rotate(45deg);
-  }
-
-  @include vp-767 {
-    padding: 20px;
-
-    &::after,
-    &::before {
-      width: 5px;
-    }
-  }
 }

@@ -1,37 +1,16 @@
 .logo {
-  display: inline-flex;
+  display: inline-block;
+  width: 215px;
+  height: 55px;
   box-sizing: border-box;
-  width: fit-content;
 
-  span {
-    @include visually-hidden;
-  }
+  &--header {
+    margin-right: auto;
 
-  @include vp-767 {
-    &--header {
-      padding-top: 10px;
-      margin: 0 auto;
-    }
-
-    &--header svg {
+    @include vp-767 {
+      padding-top: 5px;
       width: 35px;
       height: 35px;
-    }
-  }
-}
-
-.logo__icon {
-  &--mobile {
-    display: none;
-  }
-
-  @include vp-767 {
-    .logo--header > &--mobile {
-      display: initial;
-    }
-
-    .logo--header > &--desktop {
-      display: none;
     }
   }
 }

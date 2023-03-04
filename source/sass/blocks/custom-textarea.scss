@@ -1,18 +1,12 @@
-.custom-input {
+.custom-textarea {
   position: relative;
   display: flex;
   padding-bottom: 5px;
-  flex: 1 1 auto;
+  width: 100%;
 
-  legend {
-    padding: 15px 0;
-    float: left;
-    width: 100%;
-  }
-
-  input {
+  textarea {
     margin: 0;
-    padding: 15px;
+    padding: 25px 15px;
     flex-grow: 1;
 
     background: $color-black-pearl-super-transparent;
@@ -32,7 +26,6 @@
   }
 
   &.is-invalid {
-    input,
     textarea {
       border: 1px solid #ff00007d;
 
@@ -44,7 +37,7 @@
   }
 
   &.is-valid {
-    input {
+    textarea {
       border: 1px solid #22b259;
 
       &:focus,

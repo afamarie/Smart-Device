@@ -1,9 +1,4 @@
 .contact-us {
-  @include vp-1024 {
-    grid-column: 2/-1;
-    padding-bottom: 20px;
-  }
-
   legend,
   input::placeholder,
   textarea::placeholder,
@@ -14,15 +9,6 @@
     font-size: 16px;
     line-height: 22px;
     color: $color-white;
-  }
-
-  legend {
-    padding-bottom: 25px;
-  }
-
-  label {
-    display: flex;
-    flex-grow: 1;
   }
 
   input::placeholder,
@@ -38,37 +24,33 @@
     background-color: $color-white;
   }
 
+  .section--contacts & .custom-toggle {
+    flex: 1 1 260px;
+  }
+
+  @include vp-1024 {
+    grid-column: 2/-1;
+    padding-bottom: 20px;
+  }
+
   @include vp-1023 {
     width: 100%;
     padding-bottom: 10px;
-
-    legend {
-      padding-top: 5px;
-      padding-bottom: 20px;
-    }
   }
 
   @include vp-767 {
-    legend {
-      padding-top: 10px;
-      padding-bottom: 25px;
-      font-size: 14px;
-      line-height: 19px;
-    }
-
     .custom-input,
     .custom-textarea {
       padding-bottom: 0;
+    }
+
+    .section--contacts & .custom-toggle {
+      flex: 1 1 auto;
     }
   }
 
   .modal & {
     padding-bottom: 0;
-  }
-
-  .custom-input__label,
-  .custom-textarea__label {
-    @include visually-hidden;
   }
 }
 

@@ -131,38 +131,35 @@
     gap: 40px;
   }
 
-  .section--about & {
-    display: grid;
-    grid-template-columns: min-content 1fr;
-    gap: 70px;
-  }
-
   .section--contacts & {
     padding-top: 105px;
     padding-bottom: 160px;
   }
 
-  .section--about & > p {
-    display: inline-block;
-    margin: 0;
-    font-family: $additional-font;
-    font-weight: 700;
-    font-size: 156px;
-    line-height: 180px;
-    align-self: start;
-    writing-mode: vertical-lr;
-    transform: rotate(-180deg);
-    background-size: cover;
-    background-clip: content-box;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+  .section--about & {
+    position: relative;
 
-    background-image: image-set(
-      url("../img/backgrounds/background-year.webp") 1x,
-      url("../img/backgrounds/background-year@2x.webp") 2x,
-      url("../img/backgrounds/background-year.jpg") 1x,
-      url("../img/backgrounds/background-year@2x.jpg") 2x
-    );
+    &::before {
+      position: absolute;
+      display: inline-block;
+      left: 60px;
+      top: 0;
+      height: 320px;
+      width: 160px;
+      background-repeat: no-repeat;
+      background-position: top left;
+      background-image: image-set(
+        url("../img/backgrounds/2022.png") 1x,
+        url("../img/backgrounds/2022@2x.png") 2x,
+        url("../img/backgrounds/2022.jpg") 1x,
+        url("../img/backgrounds/2022@2x.jpg") 2x
+      );
+      content: "";
+    }
+  }
+
+  .section--about & > h2 {
+    padding-left: 175px;
   }
 
   @include vp-1024 {
@@ -181,7 +178,8 @@
       background-size: 38%;
     }
 
-    .section--contacts & > h2 {
+    .section--contacts & > h2,
+    .section--contacts & > p {
       grid-column: 2/-1;
       padding-left: 10px;
     }
@@ -196,16 +194,8 @@
       gap: 0;
     }
 
-    .section--about & {
-      gap: 0;
-    }
-
     .section--about & > h2 {
       line-height: 1;
-    }
-
-    .section--about & > p {
-      line-height: 175px;
     }
 
     .section--services & {
@@ -232,11 +222,11 @@
       padding-top: 10px;
     }
 
-    .section--about & {
-      grid-template-columns: 1fr;
+    .section--about & > h2 {
+      padding-left: 0;
     }
 
-    .section--about & > p {
+    .section--about &::before {
       display: none;
     }
 
