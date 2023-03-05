@@ -4,6 +4,7 @@ import {Form} from './modules/form-validate/form';
 import {initAutoResizeTextarea} from './utils/auto-resize-textarea';
 import {initPhoneMask} from './utils/phone-mask';
 import {initAccordions} from './modules/accordion/init-accordion';
+import './modules/show-content';
 
 // ---------------------------------
 

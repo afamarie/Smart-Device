@@ -15,7 +15,6 @@ export class Accordions {
 
   _documentClickHandler(evt) {
     const target = evt.target;
-    const button = evt.target.closest('[data-has-button-name]');
 
     if (!target.closest('[data-accordion="button"]')) {
       return;
@@ -31,18 +30,11 @@ export class Accordions {
     const element = target.closest('[data-accordion="element"]');
     if (element.classList.contains('is-active')) {
       this.closeAccordion(element);
-      if (element.contains(button)) {
-        button.textContent = 'Подробнее';
-      }
 
       return;
     }
 
     this.openAccordion(element);
-
-    if (element.contains(button)) {
-      button.textContent = 'Свернуть';
-    }
   }
 
   _windowResizeHandler() {
