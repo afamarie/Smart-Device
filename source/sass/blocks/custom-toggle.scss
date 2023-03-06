@@ -37,36 +37,15 @@
       border-radius: 3px;
     }
 
-    input::before,
-    input::after {
+    input[type="checkbox"]:checked::before {
       content: "";
       position: absolute;
       display: block;
-      height: 1px;
-    }
-
-    input::before {
-      top: 50%;
-      left: 15%;
-      width: 5px;
-      transform: rotate(45deg);
-    }
-
-    input::after {
-      top: 45%;
-      left: 35%;
-      width: 7px;
-      transform: rotate(-45deg);
-    }
-
-    input[type="checkbox"]:checked::after,
-    input[type="checkbox"]:checked::before {
-      background-color: $color-white-transparent;
-    }
-
-    input[type="checkbox"]:checked:hover::after,
-    input[type="checkbox"]:checked:hover::before {
-      background-color: $color-white;
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("../img/svg/checkbox.svg");
     }
   }
 

@@ -1,18 +1,24 @@
 .about {
   display: flex;
   padding-top: 15px;
-  padding-left: 175px;
-  padding-bottom: 55px;
-  min-height: 320px;
+  padding-left: 250px;
+  padding-bottom: 50px;
+  min-height: 300px;
   flex-direction: column;
   color: $color-black-pearl;
-  gap: 1em;
+
+  p {
+    padding-bottom: 1em;
+  }
 
   @include vp-1023 {
-    padding-bottom: 25px;
+    padding-top: 20px;
+    padding-left: 175px;
+    padding-bottom: 35px;
   }
 
   @include vp-767 {
+    padding-top: 10px;
     padding-bottom: 55px;
     padding-left: 0;
     min-height: auto;
@@ -42,4 +48,3 @@
     padding: 8px 15px;
   }
 }
-

@@ -21,12 +21,17 @@
   display: flex;
   padding-left: 30px;
   padding-top: 30px;
-  width: fit-content;
   flex-direction: column;
   justify-content: flex-start;
+  flex-grow: 1;
+
+  &--logo-social {
+    margin-right: auto;
+  }
 
   @include vp-1023 {
     padding-left: 20px;
+    flex-grow: 0;
 
     &--logo-social {
       width: 100%;
@@ -66,15 +71,10 @@
   }
 }
 
-.footer-container__lists {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .footer-container__social-list {
   display: flex;
   margin: 0;
-  padding: 25px 0 0;
+  padding: 25px 0 0 10px;
   flex-wrap: wrap;
   list-style: none;
   gap: 10px;
@@ -112,6 +112,13 @@
   @include vp-1023 {
     height: fit-content;
   }
+}
+
+.footer-container__lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex: 1 1 auto;
 }
 
 .footer-container__accordion-btn {
@@ -210,6 +217,6 @@
   }
 
   .footer-container__wrapper--contacts & {
-    max-width: 325px;
+    max-width: 320px;
   }
 }

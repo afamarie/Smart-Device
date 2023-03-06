@@ -57,8 +57,7 @@
     }
   }
 
-  a::after,
-  a::before {
+  a::after {
     position: absolute;
     box-sizing: border-box;
     width: 60px;
@@ -66,17 +65,9 @@
     bottom: 0;
     right: 0;
     content: "";
-  }
-
-  a::before {
-    background-color: $color-deep-sky-blue;
-    border-radius: 3px 0 0 0;
-  }
-
-  a::after {
-    background-image: url("../img/svg/arrow.svg");
+    background-image: url("../img/svg/arrow-btn.svg");
     background-repeat: no-repeat;
-    background-position: 55% center;
+    background-size: cover;
   }
 
   &--board {
@@ -150,8 +141,7 @@
       padding: 25px 60px 60px 30px;
     }
 
-    a::after,
-    a::before {
+    a::after {
       width: 40px;
       height: 40px;
     }

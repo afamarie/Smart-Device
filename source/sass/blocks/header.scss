@@ -1,6 +1,6 @@
 .header {
-  position: fixed;
-  width: 100vw;
+  position: absolute;
+  width: 100%;
   background: $top-to-bottom;
   z-index: 1;
 
@@ -13,8 +13,8 @@
     }
   }
 
-  @include vp-1023 {
-    width: 100%;
-    position: absolute;
+  @include vp-1024 {
+    position: fixed;
+    width: 100vw;
   }
 }

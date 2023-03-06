@@ -1,31 +1,6 @@
 .contact-us {
-  legend,
-  input::placeholder,
-  textarea::placeholder,
-  input,
-  textarea {
-    font-family: $basic-font;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    color: $color-white;
-  }
-
-  input::placeholder,
-  textarea::placeholder {
-    opacity: 0.8;
-  }
-
-  legend::selection,
-  input::selection,
-  textarea::selection,
-  label::selection {
-    color: $color-black-pearl;
-    background-color: $color-white;
-  }
-
-  .section--contacts & .custom-toggle {
-    flex: 1 1 260px;
+  .modal & {
+    padding-bottom: 0;
   }
 
   @include vp-1024 {
@@ -35,21 +10,7 @@
 
   @include vp-1023 {
     width: 100%;
-    padding-bottom: 10px;
-  }
-
-  @include vp-767 {
-    .custom-input,
-    .custom-textarea {
-      padding-bottom: 0;
-    }
-
-    .section--contacts & .custom-toggle {
-      flex: 1 1 auto;
-    }
-  }
-
-  .modal & {
+    padding-top: 10px;
     padding-bottom: 0;
   }
 }
@@ -71,54 +32,71 @@
 .contact-us__fields-wrapper {
   display: inline-flex;
   flex-wrap: wrap;
+  margin-top: 10px;
   padding: 0.35em 0.75em 0.6em;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   gap: 20px 30px;
 
-  .custom-toggle {
-    order: 2;
-  }
-
   @include vp-1023 {
     padding-left: 0;
     padding-right: 0;
-
-    .custom-toggle {
-      margin-right: 60px;
-      padding: 15px 0;
-      flex: 0 1 265px;
-    }
   }
 
   @include vp-767 {
     padding-top: 40px;
     padding-bottom: 5px;
     gap: 10px;
-
-    .custom-toggle {
-      margin-right: 0;
-      flex-grow: 1;
-    }
   }
 }
 
 .contact-us__submit-btn {
-  flex: 0 1 265px;
+  flex: 1 1 250px;
   font-size: 16px;
   line-height: 19px;
   order: 1;
   color: $color-white;
   background-color: $color-black-pearl;
   border: none;
+}
 
-  .modal & {
-    margin-top: 10px;
-    flex-grow: 1;
-  }
+.contact-us legend,
+.contact-us input::placeholder,
+.contact-us textarea::placeholder,
+.contact-us input,
+.contact-us textarea {
+  font-family: $basic-font;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-white;
+}
 
+.contact-us input::placeholder,
+.contact-us textarea::placeholder {
+  opacity: 0.8;
+}
+
+.contact-us legend::selection,
+.contact-us input::selection,
+.contact-us textarea::selection,
+.contact-us label::selection {
+  color: $color-black-pearl;
+  background-color: $color-white;
+}
+
+
+.contact-us .custom-input,
+.contact-us .custom-textarea {
   @include vp-767 {
-    flex-grow: 1;
+    width: 100%;
+    padding-bottom: 0;
   }
+}
+
+.contact-us .custom-toggle {
+  margin: 0 auto;
+  order: 2;
+  flex: 1 1 250px;
 }
