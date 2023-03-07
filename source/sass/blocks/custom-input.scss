@@ -1,7 +1,6 @@
 .custom-input {
   position: relative;
   display: flex;
-  padding-bottom: 5px;
   flex: 1 1 auto;
 
   legend {
@@ -51,18 +50,6 @@
       &:hover {
         border: 1px solid rgba(#22b259, 0.5);
       }
-    }
-  }
-
-  .input-message {
-    position: absolute;
-    font-size: 14px;
-    font-family: $basic-font;
-    bottom: 5px;
-    right: 10px;
-
-    &.is-invalid {
-      color: #ff00007d;
     }
   }
 }

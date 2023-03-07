@@ -5,7 +5,9 @@
 
   @include vp-1024 {
     grid-column: 2/-1;
+    padding-top: 15px;
     padding-bottom: 20px;
+    max-width: 600px;
   }
 
   @include vp-1023 {
@@ -32,7 +34,7 @@
 .contact-us__fields-wrapper {
   display: inline-flex;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 17px;
   padding: 0.35em 0.75em 0.6em;
   width: 100%;
   justify-content: space-between;
@@ -52,7 +54,7 @@
 }
 
 .contact-us__submit-btn {
-  flex: 1 1 250px;
+  flex: 0 1 263px;
   font-size: 16px;
   line-height: 19px;
   order: 1;
@@ -96,7 +98,7 @@
 }
 
 .contact-us .custom-toggle {
-  margin: 0 auto;
+  margin: auto auto 0;
   order: 2;
-  flex: 1 1 250px;
+  flex: 0 1 250px;
 }

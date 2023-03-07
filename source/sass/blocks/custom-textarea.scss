@@ -1,12 +1,11 @@
 .custom-textarea {
   position: relative;
   display: flex;
-  padding-bottom: 5px;
   width: 100%;
 
   textarea {
     margin: 0;
-    padding: 25px 15px;
+    padding: 25px 15px 20px;
     flex-grow: 1;
 
     background: $color-black-pearl-super-transparent;
@@ -44,18 +43,6 @@
       &:hover {
         border: 1px solid rgba(#22b259, 0.5);
       }
-    }
-  }
-
-  .input-message {
-    position: absolute;
-    font-size: 14px;
-    font-family: $basic-font;
-    bottom: 5px;
-    right: 10px;
-
-    &.is-invalid {
-      color: #ff00007d;
     }
   }
 }

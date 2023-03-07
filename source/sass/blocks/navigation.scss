@@ -1,13 +1,13 @@
 .navigation {
-  display: grid;
+  display: flex;
   margin: 0 auto;
   padding: 30px 60px 35px 60px;
   max-width: 1342px;
-  grid-template-columns: min-content 1fr auto;
   gap: 30px;
-  justify-content: center;
+  justify-content: space-between;
 
   @include vp-1023 {
+    display: grid;
     grid-template-columns: min-content 1fr;
     padding: 20px 50px 25px 50px;
   }
@@ -19,34 +19,40 @@
 }
 
 .navigation__list {
-  display: flex;
+  display: grid;
   margin: auto;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: space-between;
   padding: 0;
-  align-items: center;
-  list-style: none;
+  grid-template-columns: 225px 225px;
   gap: 30px;
+  list-style: none;
 
   @include vp-1023 {
+    display: flex;
     margin: 0 0 auto 0;
     justify-content: flex-end;
+    gap: 18px;
   }
 }
 
 .navigation__item {
-  margin: auto;
 
   @include vp-1023 {
-    margin: 0;
+    & + & {
+      margin-right: 20px;
+    }
+  }
+
+  @include vp-767 {
+    & + & {
+      margin-right: 10px;
+    }
   }
 }
 
 .navigation__link {
   display: grid;
   padding: 11px;
-  grid-template-columns: min-content min-content;
+  grid-template-columns: min-content 1fr;
   box-sizing: border-box;
   color: $color-alice-blue;
   gap: 15px;
@@ -77,11 +83,12 @@
 }
 
 .navigation__btn {
-  margin-top: 5px;
+  margin: 5px auto auto;
   padding: 10px 15px;
   color: $color-alice-blue;
   border: 1px solid $color-alice-blue;
   justify-self: flex-start;
+  flex: 0 1 160px;
 
   @include vp-1023 {
     display: none;

@@ -1,7 +1,7 @@
 .custom-toggle {
   position: relative;
   display: grid;
-  padding: 10px 5px;
+  padding: 5px;
   flex: 1 1 auto;
   grid-template-columns: 15px 1fr;
   align-items: center;
@@ -49,14 +49,6 @@
     }
   }
 
-  input:focus-visible {
-    width: 15px;
-    height: 15px;
-    margin: 0;
-    left: 10px;
-    clip: auto;
-  }
-
   &:hover {
     color: $color-white;
 
@@ -67,15 +59,5 @@
 
   &.is-invalid {
     background-color: #ff00003c;
-  }
-
-  .input-message {
-    position: absolute;
-    right: 0;
-    bottom: -15px;
-
-    &.is-invalid {
-      color: #ff00007d;
-    }
   }
 }

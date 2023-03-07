@@ -2,7 +2,7 @@
   display: flex;
   padding-top: 15px;
   padding-left: 250px;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
   min-height: 300px;
   flex-direction: column;
   color: $color-black-pearl;
@@ -27,6 +27,7 @@
 
 .about__hidden-content {
   visibility: visible;
+  padding-bottom: 25px;
   max-height: 100%;
   overflow: hidden;
   transition: max-height 0.3s;

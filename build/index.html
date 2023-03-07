@@ -137,23 +137,23 @@
             <p>Мы проконсультируем Вас бесплатно</p>
             <form class="contact-us" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off">
               <fieldset class="contact-us__fieldset">
-                <div class="custom-input" data-validate-type="text" data-on-input-validate="" data-message-base="укажите имя" data-required="">
+                <div class="custom-input" data-validate-type="text" data-on-input-validate="" data-required="">
                   <label class="visually-hidden" for="name">Имя</label>
                   <input type="text" placeholder="Имя" name="name" id="name" required="">
                 </div>
-                <div class="custom-input" data-validate-type="phone" data-on-input-validate="" data-message-base="укажите телефон" data-message-extra="только цифры" data-required="">
+                <div class="custom-input" data-validate-type="phone" data-on-input-validate="" data-required="">
                   <label class="visually-hidden" for="phone">Телефон</label>
                   <input type="tel" placeholder="Телефон" name="tel" id="phone" required="">
                 </div>
-                <div class="custom-textarea auto-resize-textarea">
+                <div class="custom-textarea">
                   <label class="visually-hidden" for="question">Ваш вопрос</label>
                   <textarea placeholder="Ваш вопрос" name="question" rows="5" id="question"></textarea>
                 </div>
               </fieldset>
               <div class="contact-us__fields-wrapper">
-                <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox" data-message-base="обязательное поле" data-required="">
+                <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox" data-required="">
                   <label class="custom-toggle__label" for="agreement">Я согласен на обработку  персональных данных</label>
-                  <input type="checkbox" name="agreement" value="yes" id="agreement">
+                  <input type="checkbox" name="agreement" value="yes" id="agreement" required="">
                 </div>
                 <button class="contact-us__submit-btn btn" type="submit">Задать вопрос</button>
               </div>
@@ -276,21 +276,21 @@
           <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
           <form class="contact-us" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off" data-form-modal="">
             <fieldset class="contact-us__fieldset">
-              <div class="custom-input" data-validate-type="text" data-on-input-validate="" data-message-base="укажите имя" data-required="">
+              <div class="custom-input" data-validate-type="text" data-on-input-validate="" data-required="">
                 <label class="visually-hidden" for="name-modal">Имя</label>
                 <input type="text" placeholder="Имя" name="name" id="name-modal" data-focus="" required="">
               </div>
-              <div class="custom-input" data-validate-type="phone" data-on-input-validate="" data-message-base="укажите телефон" data-message-extra="только цифры" data-required="">
+              <div class="custom-input" data-validate-type="phone" data-on-input-validate="" data-required="">
                 <label class="visually-hidden" for="phone-modal">Телефон</label>
                 <input type="tel" placeholder="Телефон" name="tel" id="phone-modal" required="">
               </div>
-              <div class="custom-textarea auto-resize-textarea">
+              <div class="custom-textarea">
                 <label class="visually-hidden" for="question-modal">Ваш вопрос</label>
                 <textarea placeholder="Ваш вопрос" name="question" rows="5" id="question-modal"></textarea>
               </div>
             </fieldset>
             <div class="contact-us__fields-wrapper">
-              <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox" data-message-base="обязательное поле" data-required="">
+              <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox" data-required="">
                 <label class="custom-toggle__label" for="agreement-modal">Я согласен на обработку  персональных данных</label>
                 <input type="checkbox" name="agreement" value="yes" id="agreement-modal">
               </div>

@@ -139,10 +139,12 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(180deg, $color-black-pearl-transparent 71.72%, transparent 100%);
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba($color-black-pearl, 0) 100%);
     z-index: -1;
   }
 }
+
+
 
 // ---------------------------------
 
