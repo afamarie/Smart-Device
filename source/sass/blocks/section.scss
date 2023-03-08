@@ -112,7 +112,7 @@
     &--contacts h2,
     &--contacts p {
       width: 100%;
-      padding-bottom: 10px;
+      padding-bottom: 7px;
     }
   }
 
@@ -148,6 +148,11 @@
 
     &--contacts h2 {
       font-size: 30px;
+    }
+
+    &--contacts h2,
+    &--contacts p {
+      padding-bottom: 10px;
     }
   }
 }
@@ -222,12 +227,12 @@
     }
 
     .section--services & {
-      padding-top: 20px;
+      padding-top: 15px;
     }
 
     .section--contacts & {
       padding-top: 5px;
-      padding-bottom: 55px;
+      padding-bottom: 75px;
     }
 
     .section--about &::before {

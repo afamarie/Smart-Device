@@ -45,4 +45,10 @@
       }
     }
   }
+
+  @include vp-767 {
+    textarea {
+      padding-bottom: 45px;
+    }
+  }
 }

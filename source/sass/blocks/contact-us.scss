@@ -1,5 +1,5 @@
 .contact-us {
-  .modal & {
+  &--modal {
     padding-bottom: 0;
   }
 
@@ -14,6 +14,10 @@
     width: 100%;
     padding-top: 10px;
     padding-bottom: 0;
+  }
+
+  @include vp-767 {
+    padding-top: 18px;
   }
 }
 
@@ -44,12 +48,13 @@
   @include vp-1023 {
     padding-left: 0;
     padding-right: 0;
+    gap: 20px 80px;
   }
 
   @include vp-767 {
-    padding-top: 40px;
-    padding-bottom: 5px;
-    gap: 10px;
+    padding-top: 3px;
+    padding-bottom: 27px;
+    gap: 21px;
   }
 }
 
@@ -61,6 +66,14 @@
   color: $color-white;
   background-color: $color-black-pearl;
   border: none;
+
+  @include vp-1023 {
+    padding-bottom: 10px;
+  }
+
+  @include vp-767 {
+    flex: 1 1 auto;
+  }
 }
 
 .contact-us legend,
@@ -88,7 +101,6 @@
   background-color: $color-white;
 }
 
-
 .contact-us .custom-input,
 .contact-us .custom-textarea {
   @include vp-767 {
@@ -101,4 +113,36 @@
   margin: auto auto 0;
   order: 2;
   flex: 0 1 250px;
+
+  @include vp-1023 {
+    margin: 0 auto 0 0;
+  }
+}
+
+.contact-us--modal .custom-input {
+  input {
+    padding: 14px 15px;
+  }
+}
+
+.contact-us--modal fieldset,
+.contact-us--modal .contact-us__fields-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.contact-us--modal .contact-us__fields-wrapper {
+  margin-top: 7px;
+  gap: 0;
+}
+
+.contact-us--modal .contact-us__submit-btn {
+  flex: 1 0 auto;
+  padding-bottom: 12px;
+}
+
+.contact-us--modal .custom-toggle {
+  margin-top: 13px;
+  margin-left: 4px;
+  flex: 1 0 auto;
 }

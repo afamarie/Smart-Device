@@ -14,7 +14,7 @@
   @include vp-1023 {
     padding-top: 20px;
     padding-left: 175px;
-    padding-bottom: 35px;
+    padding-bottom: 40px;
   }
 
   @include vp-767 {
@@ -35,6 +35,10 @@
   &--hidden {
     visibility: collapse;
     max-height: 0;
+  }
+
+  @include vp-1023 {
+    padding-bottom: 0;
   }
 }
 
