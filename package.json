@@ -59,6 +59,7 @@
     "posthtml-include": "^1.7.4",
     "sass": "^1.53.0",
     "stylelint": "15.2.0",
+    "svgo": "^2.1.0",
     "swiper": "^9.0.2",
     "webpack": "4.46.0",
     "webpack-stream": "5.2.1"

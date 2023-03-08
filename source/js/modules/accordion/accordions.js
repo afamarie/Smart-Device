@@ -9,11 +9,13 @@ export class Accordions {
 
   _init() {
     this.fullUpdate();
+    this.setTabindex();
     document.addEventListener('click', this._documentClickHandler);
     window.addEventListener('resize', this._windowResizeHandler);
   }
 
   _documentClickHandler(evt) {
+
     const target = evt.target;
 
     if (!target.closest('[data-accordion="button"]')) {
@@ -43,6 +45,20 @@ export class Accordions {
     }
     this._windowWidth = window.innerWidth;
     this.updateAccordionsHeight();
+  }
+
+  setTabindex() {
+    const parents = document.querySelectorAll('[data-accordion="parent"]');
+    parents.forEach((parent) => {
+      if (parent.dataset.destroy && window.matchMedia(parent.dataset.destroy).matches) {
+
+        const buttons = parent.querySelectorAll('[data-accordion="button"]');
+
+        buttons.forEach((button) => {
+          button.setAttribute("tabindex", 0);
+        });
+      }
+    })
   }
 
   closeAllAccordion(parent) {

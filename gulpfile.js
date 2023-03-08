@@ -132,15 +132,25 @@ export const createWebp = () => {
 
 export const svg = () => {
   return gulp.src('source/img/svg/*.svg')
-    .pipe(svgo())
+  .pipe(svgo({
+    plugins: [{
+    removeViewBox: false
+   }]
+  }
+))
     .pipe(gulp.dest('build/img/svg'));
 }
 
 export const sprite = () => {
   return gulp.src('source/img/sprite/*.svg')
-    .pipe(svgo())
+    .pipe(svgo({
+        plugins: [{
+        removeViewBox: false
+       }]
+      }
+    ))
     .pipe(svgstore({
-      inlineSvg: true
+      inlineSvg: true,
     }))
     .pipe(rename('sprite.svg'))
     .pipe(gulp.dest('build/img'));

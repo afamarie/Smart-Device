@@ -4,11 +4,11 @@
   padding: 20px 85px 40px 60px;
   max-width: 1342px;
   flex-grow: 1;
-  flex-wrap: wrap;
   justify-content: space-between;
 
   @include vp-1023 {
     padding: 20px 45px 60px 30px;
+    flex-wrap: wrap;
   }
 
   @include vp-767 {
@@ -23,6 +23,11 @@
   flex-direction: column;
   justify-content: flex-start;
 
+  &--logo-social {
+    margin-right: clamp(30px, 80px, 160px);
+    flex-grow: 1;
+  }
+
   @include vp-1023 {
     padding-left: 20px;
 
@@ -32,6 +37,7 @@
     }
 
     &--logo-social {
+      margin-right: 0;
       width: 100%;
       flex-direction: row;
       justify-content: space-between;
@@ -76,6 +82,7 @@
   flex-wrap: wrap;
   list-style: none;
   gap: 10px;
+  flex-shrink: 2;
 
   @include vp-1023 {
     padding-top: 3px;
@@ -178,7 +185,8 @@
   .footer-container__wrapper--site-menu & {
     flex: 0 1 130px;
     columns: auto;
-    column-width: 200px;
+    column-fill: auto;
+    column-width: 220px;
     column-gap: 30px;
   }
 
@@ -188,6 +196,7 @@
     .footer-container__wrapper--site-menu & {
       display: flex;
       flex-direction: column;
+      flex: 0 0 auto;
     }
   }
 
