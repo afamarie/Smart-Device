@@ -116,6 +116,7 @@
 
   @include vp-1023 {
     margin: 0 auto 0 0;
+    flex: 1 1 auto;
   }
 }
 
@@ -144,5 +145,5 @@
 .contact-us--modal .custom-toggle {
   margin-top: 13px;
   margin-left: 4px;
-  flex: 1 0 auto;
+  flex: 1 1 auto;
 }
