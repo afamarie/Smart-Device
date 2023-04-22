@@ -1,4 +1,4 @@
-# Smart-Device
+# 🤖Smart-Device
 
 Frontpage for a manufacturer. Prictice project as part of education at [HTML Academy](https://github.com/htmlonelove).
 
